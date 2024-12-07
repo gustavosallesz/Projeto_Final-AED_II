@@ -2,7 +2,7 @@
 
 Este repositório é dedicado à organização dos arquivos que compõem o projeto final da disciplina **AED-II**.  
 
-O projeto utiliza a linguagem **C** para implementar diferentes conceitos, como **listas**, **pilhas** e **árvores**, explorando técnicas de manipulação de dados e gerenciamento de memória dinâmica.  
+O projeto utiliza a linguagem **C** para implementar diferentes conceitos, como **listas**, **manipulação de arquivos** e **modo gráfico**, explorando técnicas de manipulação de dados e gerenciamento de memória dinâmica.  
 
 ## Conteúdo do repositório  
 
