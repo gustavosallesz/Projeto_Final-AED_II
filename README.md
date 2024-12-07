@@ -12,6 +12,7 @@ O projeto utiliza a linguagem **C** para implementar diferentes conceitos, como 
 
 - Luiz Salles
 - Leonardo Carvalho
+- Maykel Tavares
 
 ## Professor
 
