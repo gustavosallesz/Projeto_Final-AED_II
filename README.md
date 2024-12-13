@@ -20,9 +20,9 @@ O projeto utiliza a linguagem **C** para implementar diferentes conceitos, como 
 
 ## Conteúdo do repositório  
 
-- **Código-fonte** do projeto principal.  
-- Arquivos **auxiliares**.
-- **Documentação** e instruções de uso.  
+- Código-fonte do projeto principal.  
+- Arquivos auxiliares.
+-Documentação e instruções de uso.  
 
 ## Objetivo  
 
