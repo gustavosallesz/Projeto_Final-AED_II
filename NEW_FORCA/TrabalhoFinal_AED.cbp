@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="FuncForca.h" />
 		<Unit filename="JogoDaForca.cpp" />
 		<Unit filename="mainForca.cpp" />
 		<Extensions>

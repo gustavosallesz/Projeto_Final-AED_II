@@ -23,3 +23,41 @@
 	<graphics.h>
 	"FuncForca.h"
 
+1734034518 source:c:\users\suporte iconic\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\jogodaforca.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<locale.h>
+	<windows.h>
+	"FuncForca.h"
+
+1734034579 c:\users\suporte iconic\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\funcforca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<windows.h>
+	<unistd.h>
+
+1734034550 source:c:\users\suporte iconic\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\mainforca.cpp
+	"FuncForca.h"
+	<stdio.h>
+
+1734063951 source:d:\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\jogodaforca.cpp
+	"FuncForca.h"
+
+1734061609 d:\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\funcforca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<locale.h>
+
+1734061977 source:d:\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\mainforca.cpp
+	"FuncForca.h"
+	<locale.h>
+
