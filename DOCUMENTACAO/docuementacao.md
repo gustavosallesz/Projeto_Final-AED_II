@@ -28,7 +28,7 @@ A **Lista Simplesmente Encadeada (LSE)** é usada para armazenar dinamicamente a
 1. **Leitura de Arquivos**:
    - Lê palavras e dicas de um arquivo predefinido para gerar as rodadas do jogo.
 2. **Escrita de Arquivos**:
-   - Salva pontuações e estatísticas em arquivos para análise posterior.
+   - Permite que o jogador cadastre e remova palavras do jogo.
 3. **Interface Gráfica**:
    - Exibe o progresso do jogo (letras descobertas, boneco da forca, etc.) usando a biblioteca gráfica `graphics.h`.
 
@@ -38,25 +38,15 @@ A **Lista Simplesmente Encadeada (LSE)** é usada para armazenar dinamicamente a
 1. **Pré-requisitos**:
    - Um compilador que suporte **C/C++**.
    - Configuração da biblioteca gráfica `graphics.h`.
-2. **Compilação**:
-   - Compile o código usando o seguinte comando (ajuste conforme o compilador):
-     ```bash
-     gcc -o jogo_forca jogo_forca.c -lgraphics
-     ```
-3. **Execução**:
-   - Após a compilação, execute o programa:
-     ```bash
-     ./jogo_forca
-     ```
-
+2.  **Execução**:
+   - Faça o download do diretório que armazena os arquivos.
+   - Abra o CodeBlocks e selecione a opção `Abrir projeto existente`.
+   - Na pasta recém baixada, selecione o arquivo `TrabalhoFinal_AED`, cujo tipo é `project file`.
+   - Após isso, todos os códigos que compõem o projeto serão carregados na tela.
+  
 ---
 
 ## Contribuidores
 - **Luiz e Equipe**: Desenvolvedores principais do projeto.
-
----
-
-## Contato
-Para dúvidas ou sugestões, entre em contato através do repositório.
 
 ---
