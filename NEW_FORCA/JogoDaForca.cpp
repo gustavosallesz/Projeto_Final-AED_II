@@ -1,5 +1,9 @@
 #include "FuncForca.h"
 
+ /* Só estamos com um problema na hora de adivinhar a palavra que tem espaço na string. O game não entendo que vc já digitou tudo corretamente
+    e basta ele mostar a resposta agora, ele armazena esse espaço com algum caracter inemaginavel... mas se apertarmos na tecla "espaço", ele
+    também não entende */
+
  void ortografia() {
     setlocale(LC_ALL, "Portuguese");
 }
@@ -10,15 +14,15 @@ void carregaPalavras(Palavra **lista) {
     FILE *arquivo = fopen("palavras.txt", "r");
     if (!arquivo) {
         printf("Arquivo de palavras nao encontrado. Criando novo...\n");
-        arquivo = fopen("palavras.txt", "w");  // Abre em modo de escrita para criar o arquivo vazio
-        fclose(arquivo);  // Fecha o arquivo vazio
+        arquivo = fopen("palavras.txt", "w");  //Se o arquivo não abrir, aqui definimos que um novo será criado
+        fclose(arquivo);
         return;
     }
 
     char linha[150];
     while (fgets(linha, sizeof(linha), arquivo)) {
-        linha[strcspn(linha, "\n")] = '\0'; // Remove o \n
-        char *dica = strtok(linha, ";");
+        linha[strcspn(linha, "\n")] = '\0'; //Encontrei essa função pra remover o '\n', caso ele exista.
+        char *dica = strtok(linha, ";");    //Essa outra divide a "%s" em substrings, dividindo elas com o caracter ";". Isso para lermos a dica antes da palavra correspondente.
         char *palavra = strtok(NULL, ";");
         if (dica && palavra) {
             adicionaPalavra(lista, palavra, dica);
@@ -82,12 +86,12 @@ void exibePalavras(Palavra *lista) {
 }
 
 
-// Remove uma palavra específica da lista
+// Remove uma palavra desejada da lista de palavras (arquivo)
 void removePalavra(Palavra **lista, const char *palavra) {
     Palavra *atual = *lista;
     Palavra *anterior = NULL;
 
-    // Procura a palavra na lista
+    // Procura a palavra na lista de palavras (arquivo)
     while (atual != NULL && strcmp(atual->palavra, palavra) != 0) {
         anterior = atual;
         atual = atual->prox;
@@ -96,21 +100,22 @@ void removePalavra(Palavra **lista, const char *palavra) {
     // Palavra não encontrada
     if (atual == NULL) {
         printf("\nPalavra '%s' nao encontrada!\n", palavra);
-        return; // Apenas sai da função, sem encerrar o programa
+        return; // Apenas sai da função de remover, não fecha o programa aqui
     }
 
-    // Remove o nó da lista
+    // Remove da lista o nó correspondente à palavra
     if (anterior == NULL) {
-        *lista = atual->prox; // A palavra está no início
+        *lista = atual->prox;
     } else {
-        anterior->prox = atual->prox; // A palavra está no meio ou no fim
+        anterior->prox = atual->prox;
     }
 
-    free(atual); // Libera a memória
+    free(atual);
     printf("\nPalavra '%s' removida com sucesso!\n", palavra);
 
     // Atualiza o arquivo
     salvaPalavras(*lista);
+    ;
 }
 
 
@@ -124,7 +129,7 @@ void limpaLista(Palavra *lista) {
     }
 }
 
-// Função principal do jogo
+
 void jogo(Palavra *lista) {
     if (!lista) {
         printf("\nNenhuma palavra cadastrada!\n");
@@ -138,9 +143,9 @@ void jogo(Palavra *lista) {
         atual = atual->prox;
     }
 
-    int indice = rand() % total;
+    int i = rand() % total;
     atual = lista;
-    while (indice-- && atual) {
+    while (i-- && atual) {
         atual = atual->prox;
     }
 

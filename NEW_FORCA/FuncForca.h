@@ -8,7 +8,7 @@
 #include <time.h>
 #include <locale.h>
 
-// Estrutura de lista para armazenarmos palavras e dicas
+
 typedef struct Palavra {
     char palavra[50];
     char dica[100];

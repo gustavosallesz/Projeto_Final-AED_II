@@ -28,13 +28,13 @@ int main() {
                 break;
             case 2: {
                 char palavra[50], dica[100];
-                printf("Digite a nova palavra: ");
+                printf("Digite a nova palavra, sem espaço e em CAPSLOCK: ");
                 fgets(palavra, sizeof(palavra), stdin);
                 palavra[strcspn(palavra, "\n")] = '\0';
 
-                printf("Digite a dica: ");
+                printf("Digite a dica, apenas com a incial maíuscula: ");
                 fgets(dica, sizeof(dica), stdin);
-                dica[strcspn(dica, "\n")] = '\0'; // Remove o \n
+                dica[strcspn(dica, "\n")] = '\0';
 
                 adicionaPalavra(&listaPalavras, palavra, dica);
                 salvaPalavras(listaPalavras);
@@ -57,7 +57,7 @@ int main() {
             default:
                 printf("\nOpcao invalida. Tente novamente.\n");
         }
-    } while (opcao != 4);
+    } while (opcao != 5);
 
     limpaLista(listaPalavras);
     return 0;
