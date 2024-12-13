@@ -1,7 +1,7 @@
 # Projeto Final - Estruturas de Dados Dinâmicas e Arquivos
 
 `PPC-CC: PUC Poços de Caldas - Ciência da Computação`
-`Disciplina: Modelagem 3D`
+`Disciplina: Algoritmos e Estruturas de Dados II`
 `2024 - Semestre 2`
 
 Este repositório é dedicado à organização dos arquivos que compõem o projeto final da disciplina **AED-II**.  
