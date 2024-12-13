@@ -27,3 +27,7 @@ O projeto utiliza a linguagem **C** para implementar diferentes conceitos, como 
 ## Objetivo  
 
 Consolidar o aprendizado por meio da criação de um jogo interativo que demonstra o uso de estruturas dinâmicas e arquivos, na prática.
+
+## Documentação
+
+<li><a href="DOCUMENTACAO/README.md"> Clicando aqui, você será redirecionado para o arquivo que detalha o projeto</a></li>
