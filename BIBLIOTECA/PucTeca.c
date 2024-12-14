@@ -17,7 +17,7 @@ void removerLivro(Livro **head, int id) {
         temp = temp->prox;
     }
     if (temp == NULL) {
-        printf("Livro não encontrado!\n");
+        printf("Livro nÃ£o encontrado!\n");
         return;
     }
     if (prev == NULL) {
@@ -32,7 +32,7 @@ void removerLivro(Livro **head, int id) {
 void listarLivros(Livro *head) {
     Livro *temp = head;
     while (temp != NULL) {
-        printf("ID: %d, Nome: %s, Gênero: %s\n", temp->id, temp->nome, temp->genero);
+        printf("ID: %d, Nome: %s, GÃªnero: %s\n", temp->id, temp->nome, temp->genero);
         temp = temp->prox;
     }
 }
@@ -89,7 +89,7 @@ void buscarLivroPorNome(Livro *head, const char *nome) {
     int encontrado = 0;
     while (temp != NULL) {
         if (strcmp(temp->nome, nome) == 0) {
-            printf("ID: %d, Nome: %s, Gênero: %s\n", temp->id, temp->nome, temp->genero);
+            printf("ID: %d, Nome: %s, GÃªnero: %s\n", temp->id, temp->nome, temp->genero);
             encontrado = 1;
         }
         temp = temp->prox;
@@ -104,13 +104,13 @@ void buscarLivroPorGenero(Livro *head, const char *genero) {
     int encontrado = 0;
     while (temp != NULL) {
         if (strcmp(temp->genero, genero) == 0) {
-            printf("ID: %d, Nome: %s, Gênero: %s\n", temp->id, temp->nome, temp->genero);
+            printf("ID: %d, Nome: %s, GÃªnero: %s\n", temp->id, temp->nome, temp->genero);
             encontrado = 1;
         }
         temp = temp->prox;
     }
     if (!encontrado) {
-        printf("Nenhum livro encontrado no gênero '%s'\n", genero);
+        printf("Nenhum livro encontrado no gÃªnero '%s'\n", genero);
     }
 }
 
