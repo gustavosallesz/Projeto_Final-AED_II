@@ -23,10 +23,27 @@
 	<graphics.h>
 	"FuncForca.h"
 
-1734100101 source:c:\users\suporte iconic\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\jogodaforca.cpp
+1734117164 source:c:\users\suporte iconic\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\jogodaforca.cpp
 	"FuncForca.h"
 
-1734099015 c:\users\suporte iconic\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\funcforca.h
+1734116530 c:\users\suporte iconic\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\funcforca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<locale.h>
+	<ctype.h>
+	<graphics.h>
+
+1734116610 source:c:\users\suporte iconic\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\mainforca.cpp
+	<locale.h>
+
+1734145007 source:d:\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\jogodaforca.cpp
+	"FuncForca.h"
+	<locale.h>
+
+1734144916 d:\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\funcforca.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -34,22 +51,7 @@
 	<time.h>
 	<locale.h>
 
-1734099863 source:c:\users\suporte iconic\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\mainforca.cpp
-	"FuncForca.h"
-	<locale.h>
-
-1734063951 source:d:\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\jogodaforca.cpp
-	"FuncForca.h"
-
-1734061609 d:\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\funcforca.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-	<time.h>
-	<locale.h>
-
-1734061977 source:d:\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\mainforca.cpp
+1734144780 source:d:\onedrive - sga.pucminas.br\aed ii\github\projeto_final-aed_ii\new_forca\mainforca.cpp
 	"FuncForca.h"
 	<locale.h>
 

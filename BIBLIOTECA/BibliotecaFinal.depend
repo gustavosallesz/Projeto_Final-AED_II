@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1734147553 source:d:\onedrive - sga.pucminas.br\aed ii\github\bibliotecafinal\bibliotecapuc.c
+	"FuncPucTeca.h"
+
+1734147545 d:\onedrive - sga.pucminas.br\aed ii\github\bibliotecafinal\funcpucteca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1734147407 source:d:\onedrive - sga.pucminas.br\aed ii\github\bibliotecafinal\main.c
+	"FuncPucTeca.h"
+	<locale.h>
+

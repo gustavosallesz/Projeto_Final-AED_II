@@ -15,8 +15,7 @@ typedef struct Palavra {
     struct Palavra *prox;
 } Palavra;
 
-// Declaração das nossas funções utilizadas no código
-void ortografia();
+// Declaraï¿½ï¿½o das nossas funï¿½ï¿½es utilizadas no cï¿½digo
 void carregaPalavras(Palavra **lista);
 void salvaPalavras(Palavra *lista);
 void adicionaPalavra(Palavra **lista, const char *palavra, const char *dica);
