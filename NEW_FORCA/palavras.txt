@@ -9,4 +9,4 @@ Marca de ferramentas;MAKITA
 Banco brasileiro;CAIXA
 Instrumento de trabalho;COMPUTADOR
 Quem nasce na Nicaragua;AMERICANO
-L¡der de Roma;CESAR AUGUSTO
+Lider de Roma;CESAR AUGUSTO
