@@ -28,11 +28,11 @@ int main() {
                 break;
             case 2: {
                 char palavra[50], dica[100];
-                printf("Digite a nova palavra, sem espaço e em CAPSLOCK: ");
+                printf("Digite a nova palavra, em CAPSLOCK e havendo espaço, use '-': ");
                 fgets(palavra, sizeof(palavra), stdin);
                 palavra[strcspn(palavra, "\n")] = '\0';
 
-                printf("Digite a dica, apenas com a incial maíuscula: ");
+                printf("Digite a dica: ");
                 fgets(dica, sizeof(dica), stdin);
                 dica[strcspn(dica, "\n")] = '\0';
 
