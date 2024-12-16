@@ -1,27 +1,27 @@
 #include "FuncForca.h"
-#include <locale.h>
 
+ /* Só estamos com um problema na hora de adivinhar a palavra que tem espaço na string. O game não entendo que vc já digitou tudo corretamente
+    e basta ele mostar a resposta agora, ele armazena esse espaço com algum caracter inemaginavel... mas se apertarmos na tecla "espaço", ele
+    também não entende */
 
- /* S� estamos com um problema na hora de adivinhar a palavra que tem espa�o na string. O game n�o entendo que vc j� digitou tudo corretamente
-    e basta ele mostar a resposta agora, ele armazena esse espa�o com algum caracter inemaginavel... mas se apertarmos na tecla "espa�o", ele
-    tamb�m n�o entende */
+ void ortografia() {
+    setlocale(LC_ALL, "Portuguese");
+}
 
-
-
- /* Nessa fun��o a gente faz com que as palavras sejam carregadas
+ /* Nessa função a gente faz com que as palavras sejam carregadas
     da lista para o arquivo*/
 void carregaPalavras(Palavra **lista) {
     FILE *arquivo = fopen("palavras.txt", "r");
     if (!arquivo) {
         printf("Arquivo de palavras nao encontrado. Criando novo...\n");
-        arquivo = fopen("palavras.txt", "w");  //Se o arquivo n�o abrir, aqui definimos que um novo ser� criado
+        arquivo = fopen("palavras.txt", "w");  //Se o arquivo não abrir, aqui definimos que um novo será criado
         fclose(arquivo);
         return;
     }
 
     char linha[150];
     while (fgets(linha, sizeof(linha), arquivo)) {
-        linha[strcspn(linha, "\n")] = '\0'; //Encontrei essa fun��o pra remover o '\n', caso ele exista.
+        linha[strcspn(linha, "\n")] = '\0'; //Encontrei essa função pra remover o '\n', caso ele exista.
         char *dica = strtok(linha, ";");    //Essa outra divide a "%s" em substrings, dividindo elas com o caracter ";". Isso para lermos a dica antes da palavra correspondente.
         char *palavra = strtok(NULL, ";");
         if (dica && palavra) {
@@ -52,7 +52,7 @@ void salvaPalavras(Palavra *lista) {
 }
 
 
-// Adiciona uma nova palavra � lista
+// Adiciona uma nova palavra à lista
 void adicionaPalavra(Palavra **lista, const char *palavra, const char *dica) {
     Palavra *nova = (Palavra *)malloc(sizeof(Palavra));
     if (!nova) {
@@ -97,13 +97,13 @@ void removePalavra(Palavra **lista, const char *palavra) {
         atual = atual->prox;
     }
 
-    // Palavra n�o encontrada
+    // Palavra não encontrada
     if (atual == NULL) {
         printf("\nPalavra '%s' nao encontrada!\n", palavra);
-        return; // Apenas sai da fun��o de remover, n�o fecha o programa aqui
+        return; // Apenas sai da função de remover, não fecha o programa aqui
     }
 
-    // Remove da lista o n� correspondente � palavra
+    // Remove da lista o nó correspondente à palavra
     if (anterior == NULL) {
         *lista = atual->prox;
     } else {
@@ -119,7 +119,7 @@ void removePalavra(Palavra **lista, const char *palavra) {
 }
 
 
-// Libera mem�ria alocada para a lista
+// Libera memória alocada para a lista
 void limpaLista(Palavra *lista) {
     Palavra *atual;
     while (lista) {
@@ -164,7 +164,7 @@ void jogo(Palavra *lista) {
 
         printf("Digite uma letra: ");
         char chute;
-        scanf("%c", &chute);
+        scanf(" %c", &chute);
         chute = toupper(chute);
 
         int encontrou = 0;
