@@ -18,7 +18,7 @@ int main() {
         printf(" \n3. Exibir palavras");
         printf(" \n4. Remover palavra");
         printf(" \n5. Sair");
-        printf("\n\nEscolha uma opÁ„o: ");
+        printf("\n\nEscolha uma op√ß√£o: ");
         scanf("%d", &opcao);
         getchar();
 
@@ -28,11 +28,11 @@ int main() {
                 break;
             case 2: {
                 char palavra[50], dica[100];
-                printf("Digite a nova palavra, SEM ESPA«O E EM CAPSLOCK: ");
+                printf("Digite a nova palavra, sem espa√ßo e em CAPSLOCK: ");
                 fgets(palavra, sizeof(palavra), stdin);
                 palavra[strcspn(palavra, "\n")] = '\0';
 
-                printf("Digite a dica, apenas com a INICIAL MAÕUSCULA: ");
+                printf("Digite a dica, apenas com a incial ma√≠uscula: ");
                 fgets(dica, sizeof(dica), stdin);
                 dica[strcspn(dica, "\n")] = '\0';
 
