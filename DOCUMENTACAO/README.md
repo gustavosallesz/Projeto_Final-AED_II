@@ -45,6 +45,9 @@ A **Lista Simplesmente Encadeada (LSE)** é usada para armazenar dinamicamente a
    - Após isso, todos os códigos que compõem o projeto serão carregados nas abas à esquerda: `Sources/.c e Headers/.h`.
   
 ---
+##Acesso ao Vídeo
+
+Siga este link do Youtube para acesso ao nosso vídeo explicativo [Jogo da Forca - Apresentação Final](https://youtu.be/bU2nXbKyRW0)
 
 ## Contribuidores
 - **Leonardo, Luiz e Maykel**: Desenvolvedores principais do projeto.
