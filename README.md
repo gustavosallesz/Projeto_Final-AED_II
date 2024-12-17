@@ -22,7 +22,7 @@ O projeto utiliza a linguagem **C** para implementar diferentes conceitos, como 
 
 - Código-fonte do projeto principal.  
 - Arquivos auxiliares.
--Documentação e instruções de uso.  
+- Documentação e instruções de uso.  
 
 ## Objetivo  
 
