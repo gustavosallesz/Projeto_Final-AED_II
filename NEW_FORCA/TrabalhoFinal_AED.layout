@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="FuncForca.h" open="1" top="0" tabpos="3">
+		<Cursor position="363" topLine="2" />
+	</File>
+	<File name="JogoDaForca.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="1083" topLine="0" />
+	</File>
+	<File name="mainForca.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="771" topLine="25" />
+	</File>
+</CodeBlocks_layout_file>
