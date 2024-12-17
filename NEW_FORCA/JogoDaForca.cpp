@@ -1,28 +1,40 @@
 #include "FuncForca.h"
 
- /* Só estamos com um problema na hora de adivinhar a palavra que tem espaço na string. O game não entendo que vc já digitou tudo corretamente
-    e basta ele mostar a resposta agora, ele armazena esse espaço com algum caracter inemaginavel... mas se apertarmos na tecla "espaço", ele
-    também não entende */
 
- void ortografia() {
+#define MAX_TENTATIVAS 6
+
+void ortografia() {
     setlocale(LC_ALL, "Portuguese");
 }
 
- /* Nessa função a gente faz com que as palavras sejam carregadas
-    da lista para o arquivo*/
+// Função que desenha a forca com base no número de erros
+void desenhaForca(int tentativasRestantes) {
+    int erros = MAX_TENTATIVAS - tentativasRestantes;
+
+    printf("\n==== Forca ====\n");
+    printf("   _______\n");
+    printf("  |       |\n");
+    printf("  |       %s\n", erros > 0 ? "O" : " ");
+    printf("  |      %s%s%s\n", erros > 2 ? "/" : " ", erros > 1 ? "|" : " ", erros > 3 ? "\\" : " ");
+    printf("  |      %s %s\n", erros > 4 ? "/" : " ", erros > 5 ? "\\" : " ");
+    printf("  |\n");
+    printf("__|__\n\n");
+}
+
+// Função para carregar as palavras do arquivo para a lista
 void carregaPalavras(Palavra **lista) {
     FILE *arquivo = fopen("palavras.txt", "r");
     if (!arquivo) {
         printf("Arquivo de palavras nao encontrado. Criando novo...\n");
-        arquivo = fopen("palavras.txt", "w");  //Se o arquivo não abrir, aqui definimos que um novo será criado
+        arquivo = fopen("palavras.txt", "w");  // Se o arquivo não abrir, criamos um novo
         fclose(arquivo);
         return;
     }
 
     char linha[150];
     while (fgets(linha, sizeof(linha), arquivo)) {
-        linha[strcspn(linha, "\n")] = '\0'; //Encontrei essa função pra remover o '\n', caso ele exista.
-        char *dica = strtok(linha, ";");    //Essa outra divide a "%s" em substrings, dividindo elas com o caracter ";". Isso para lermos a dica antes da palavra correspondente.
+        linha[strcspn(linha, "\n")] = '\0'; // Usamos essa para remover o '\n', caso exista
+        char *dica = strtok(linha, ";");    // Divide a linha de escrita pelo ";", para separar palavra e dica
         char *palavra = strtok(NULL, ";");
         if (dica && palavra) {
             adicionaPalavra(lista, palavra, dica);
@@ -32,8 +44,7 @@ void carregaPalavras(Palavra **lista) {
     fclose(arquivo);
 }
 
-
-// Salva palavras da lista no arquivo
+// Salva as palavras no arquivo
 void salvaPalavras(Palavra *lista) {
     FILE *arquivo = fopen("palavras.txt", "w");
     if (!arquivo) {
@@ -50,7 +61,6 @@ void salvaPalavras(Palavra *lista) {
     fclose(arquivo);
     printf("\nPalavras salvas com sucesso!\n");
 }
-
 
 // Adiciona uma nova palavra à lista
 void adicionaPalavra(Palavra **lista, const char *palavra, const char *dica) {
@@ -75,7 +85,7 @@ void adicionaPalavra(Palavra **lista, const char *palavra, const char *dica) {
     }
 }
 
-// Exibe todas as palavras da lista
+// Exibe todas as palavras da lista (não vale trapacear hein)
 void exibePalavras(Palavra *lista) {
     printf("\n=== LISTA DE PALAVRAS ===\n");
     Palavra *atual = lista;
@@ -85,24 +95,20 @@ void exibePalavras(Palavra *lista) {
     }
 }
 
-
-// Remove uma palavra desejada da lista de palavras (arquivo)
+// Remove a palavra desejada da lista
 void removePalavra(Palavra **lista, const char *palavra) {
     Palavra *atual = *lista;
     Palavra *anterior = NULL;
 
-    // Procura a palavra na lista de palavras (arquivo)
     while (atual != NULL && strcmp(atual->palavra, palavra) != 0) {
         anterior = atual;
         atual = atual->prox;
     }
-
     // Palavra não encontrada
     if (atual == NULL) {
         printf("\nPalavra '%s' nao encontrada!\n", palavra);
-        return; // Apenas sai da função de remover, não fecha o programa aqui
+        return;
     }
-
     // Remove da lista o nó correspondente à palavra
     if (anterior == NULL) {
         *lista = atual->prox;
@@ -112,14 +118,10 @@ void removePalavra(Palavra **lista, const char *palavra) {
 
     free(atual);
     printf("\nPalavra '%s' removida com sucesso!\n", palavra);
-
-    // Atualiza o arquivo
     salvaPalavras(*lista);
-    ;
 }
 
-
-// Libera memória alocada para a lista
+// Libera a memória alocada para a lista
 void limpaLista(Palavra *lista) {
     Palavra *atual;
     while (lista) {
@@ -129,7 +131,7 @@ void limpaLista(Palavra *lista) {
     }
 }
 
-
+// Função principal do jogo
 void jogo(Palavra *lista) {
     if (!lista) {
         printf("\nNenhuma palavra cadastrada!\n");
@@ -152,15 +154,18 @@ void jogo(Palavra *lista) {
     char *palavra = atual->palavra;
     char *dica = atual->dica;
     char tentativa[strlen(palavra) + 1];
-    memset(tentativa, '_', strlen(palavra));
+    for (int i = 0; i < strlen(palavra); i++) {
+        tentativa[i] = '_';
+    }
     tentativa[strlen(palavra)] = '\0';
 
-    int tentativasRestantes = 6, acertos = 0, tamanhoPalavra = strlen(palavra);
+    int tentativasRestantes = MAX_TENTATIVAS, acertos = 0, tamanhoPalavra = strlen(palavra);
     printf("\nDica: %s\n", dica);
 
     while (tentativasRestantes > 0 && acertos < tamanhoPalavra) {
         printf("\nPalavra: %s\n", tentativa);
         printf("Tentativas restantes: %d\n", tentativasRestantes);
+        desenhaForca(tentativasRestantes);
 
         printf("Digite uma letra: ");
         char chute;
@@ -188,5 +193,6 @@ void jogo(Palavra *lista) {
         printf("\nParabens! Voce acertou a palavra: %s\n", palavra);
     } else {
         printf("\nQue pena! A palavra era: %s\n", palavra);
+        desenhaForca(0);  // Desenha o boneco completo após derrota
     }
 }
