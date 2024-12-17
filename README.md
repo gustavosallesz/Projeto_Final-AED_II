@@ -6,7 +6,7 @@
 
 Este repositório é dedicado à organização dos arquivos que compõem o projeto final da disciplina **AED-II**.  
 
-O projeto utiliza a linguagem **C** para implementar diferentes conceitos, como **listas** e **manipulação de arquivos**, explorando técnicas de manipulação de dados e gerenciamento de memória dinâmica.  
+O projeto utiliza a linguagem **C** para implementar diferentes conceitos, como **listas** e **manipulação de arquivos**, explorando técnicas de manipulação de dados e gerenciamento de memória dinâmica. Para visualizá-lo, por favor selecione a pasta `NEW_FORCA`
 
 ## Integrantes
 
