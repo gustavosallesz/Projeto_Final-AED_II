@@ -30,23 +30,23 @@ A **Lista Simplesmente Encadeada (LSE)** é usada para armazenar dinamicamente a
 2. **Escrita de Arquivos**:
    - Permite que o jogador cadastre e remova palavras do jogo.
 3. **Interface Gráfica**:
-   - Exibe o progresso do jogo (letras descobertas, boneco da forca, etc.) usando a biblioteca gráfica `graphics.h`.
+   - Removemos do projeto final pois o tempo tava curto e o trabalho tava muito kkkkkkk. Porém, na pasta "OLD_FORCA", há um projeto mais simples, utilizando o modo gráfico.
 
 ---
 
 ## Como Executar
 1. **Pré-requisitos**:
    - Um compilador que suporte **C/C++**.
-   - Configuração da biblioteca gráfica `graphics.h`.
+   - Configuração da biblioteca gráfica `graphics.h`. (Não é mais necessário)
 2.  **Execução**:
    - Faça o download do diretório que armazena os arquivos.
    - Abra o CodeBlocks e selecione a opção `Abrir projeto existente`.
    - Na pasta recém baixada, selecione o arquivo `TrabalhoFinal_AED`, cujo tipo é `project file`.
-   - Após isso, todos os códigos que compõem o projeto serão carregados na tela.
+   - Após isso, todos os códigos que compõem o projeto serão carregados nas abas à esquerda: `Sources/.c e Headers/.h`.
   
 ---
 
 ## Contribuidores
-- **Luiz e Equipe**: Desenvolvedores principais do projeto.
+- **Leonardo, Luiz e Maykel**: Desenvolvedores principais do projeto.
 
 ---
